@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <meta charset='utf-8' />
+          <title>Human Indicators</title>
+          <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+          <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+          <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+          <script src="https://code.highcharts.com/highcharts.js"></script>
+          <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.js'></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <style>
+            
+            body{   
+                font-family: Verdana,Geneva,sans-serif;
+                font-size: 12px;
+            }
+            
+            .title {
+                font-family: Verdana,Geneva,sans-serif;
+                font-size: 18px;
+                text-align: left;
+                padding: 5px;
+                margin-top: 10px;
+            }
+            
+            /* Create three unequal columns that floats next to each other */
+            .column {
+              float: left;
+              padding: 1px;
+              /*outline: 2px solid purple;*/
+            }
+
+            .left {
+              width: 11%;
+              float: left;
+              top: 5px;
+                
+            }
+
+            .middle, .right {
+              width: 44%;
+            }
+            
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+
+            .maps {
+                margin: 1%;
+                outline: 2px solid black;
+            }
+            
+            .maptitles {
+                text-align: center;
+                outline: none;
+                margin-top: 10px;
+                padding: 10px;
+                font-weight: bold;
+            }
+            
+            .legend{
+                float: left;
+                padding: 0px;
+                text-align: center;
+                /*outline: 2px solid black;*/
+                z-index: 1000;
+                position: absolute;
+                top: 79px; left: 2px;
+            
+            }
+            
+             .link{
+                padding: 5px;
+                text-align: left;
+            }
+            
+            .legend-key { 
+                display:inline-block;
+                vertical-align: top;
+                width: 15px; 
+                height: 15px; 
+                margin-right: 5px; 
+                opacity: 0.75;
+                background-color: white;
+                
+            } 
+            
+            
+            .legend fieldset{
+                background-color: lightgray;
+                padding: 0;
+                
+            }
+            
+            .legend .selectIndicator {
+                padding-bottom: 5%;
+            }
+            
+            .bins {
+                
+                text-align: left;
+                padding: 5px;
+                line-height: 25px;
+                margin-bottom: 20px; 
+                /*outline: 1px solid black;*/
+                width: 100%;
+            }
+            
+            .legend .leftMap, .rightMap, .subButton {
+                padding: 2%;
+                
+            }
+            
+            #chartContainer {
+                height: 25%;
+                width: 50%;
+                margin: auto;
+                margin-top: 2%;
+            }
+            
+            .mapboxgl-popup-content {
+                max-width: 350px;
+            
+            }
+            
+        </style>
+        
+<script type="text/javascript">
+    
+    //hide 1990 and 2000 options because SNAP data doesn't exist for those years
+    $( document ).ready(function() {
+        
+        //alert("ready!");
+           
+        $.ajaxSetup({
+            cache:false
+        });        
+        $("#indicatorNames").change(function(){ 
+                    //alert("Changed.");
+                    if ( $(this).val() == "snap" || $(this).val() == "gini" ) {
+                        $(".earlyYears").hide();
+                    } else if($(this).val() == "insure") {
+                        $(".2010").hide(); 
+                        $(".earlyYears").hide();
+                    } else {
+                        $(".earlyYears").show();
+                        $(".2010").show();
+                    }
+                });
+        
+                $('#compare').click(function () {
+                 //$('#bins').empty();
+                });
+           }); 
+</script>
+            
+<div class="row">
+  <div class="column left" >
+       <div class="title">Human Measures</div>
+     
+  </div>
+  <div class="column middle">
+      <div id = "leftMapTitle"></div>
+  </div>
+  <div class="column right" >
+      <div id = "rightMapTitle"></div>
+  </div>
+</div>
+        
+<div class="row">
+      <div class="column left" >
+
+          <div class= "legend">
+              
+               <div class = "link">
+                <a href = "indicator_descriptions.pdf"> Indicator Descriptions</a>
+              </div>
+              
+            <form id="chooseMaps"> 
+                <fieldset> 
+                    <div class = "selectIndicator">
+                        <legend> Select Indicator </legend>
+                     
+                        <select id="indicatorNames" style="width: 80%">
+                            <option value= "afram_"> African American </option>
+                            <option value= "age4_"> Age 0-4 </option>
+                            <option value = "age17_"> Age 5-17 </option>
+                            <option value = "age64_"> Age 18-64 </option>
+                            <option value = "asian"> Asian </option>
+                            <option value = "chldpt"> Child Ratio </option>
+                            <option value = "depidx"> Dependency Index </option>
+                            <option value= "dividx"> Diversity Index </option>
+                            <option value= "fhh"> Female-Headed Family Households</option>
+                            <option value= "latino"> Latino or Hispanic </option>
+                            <option value= "educ"> Less Than High School </option>
+                            <option selected value= "min04_"> Minor Population (0-4) </option>
+                            <option selected value= "minperc"> Minor Population (0-17) </option>
+                            <option value= "nonwh"> Non-White </option>
+                            <option value= "presch"> Preschool </option>
+                            <option value= "popden"> Population Density </option> 
+                            <option value= "white"> White </option>   
+                        </select>
+                   </div>
+                    
+                    <fieldset>
+                        <legend> Select a year for: </legend>
+                        
+                        <div class= "leftMap">
+                            <legend> Left Map </legend>
+                            <div class = "earlyYears">
+                                <input type="radio" id="L1990" name="compareLeft" value="1990">
+                                <label for="L1990"> 1990 </label>
+                                <input type="radio" id="L2000" name="compareLeft" value="2000">
+                                <label for="L2000"> 2000 </label><br/>
+                            </div>
+                            <div class = "2010" style="display:inline">
+                                <input type="radio" id="L2010" name="compareLeft" value="2010">
+                                <label for="L2010"> 2010 </label>
+                            </div>
+                            <input type="radio" id="L2016" name="compareLeft" value="2016">
+                                <label for="L2016"> 2016 </label>
+                        
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset> 
+                            <div class= "rightMap">
+                                <legend>Right map</legend>
+                                
+                                <div class = "earlyYears">
+
+                                    <input type="radio" id="1990" name="compareRight" value="1990">
+                                    <label for="1990"> 1990 </label>
+
+                                    <input type="radio" id="2000" name="compareRight" value="2000">
+                                    <label for="2000"> 2000 </label><br/>
+                                    
+                                </div>
+                                <div class = "2010" style="display:inline">
+
+                                    <input type="radio" id="2010" name="compareRight" value="2010">
+                                    <label for="2010"> 2010 </label>
+                                </div>
+
+                                <input type="radio" id="2016" name="compareRight" value="2016">
+                                <label for="2016"> 2016 </label>
+                        </div>
+                    </fieldset>
+                    
+                    <div class="subButton">
+                        <button type="button" id="compare" onclick= "getInput()"> Compare </button>
+                     </div>
+                    
+                    <div class="clearButton">
+                        <button type="button" id="clear" onclick= "clearMaps(selectedIndicator, true)"> Clear Maps </button>
+                     </div>
+        
+                </fieldset>
+            </form>
+        
+            
+            <div id = "bins" class="bins">
+                
+            </div>
+            </div>
+      </div>
+      <div class="column middle">
+          <div class='maps'>
+          <div id="leftMap" style="height: 600px;"></div>
+          </div>
+
+      </div>
+      <div class="column right" >
+          <div class='maps'>
+           <div id="rightMap" style="height: 600px;"> </div>
+          </div>
+      </div>
+</div>
+
+        <div id="chartContainer">  </div>
+
+
+        
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZnVybWFudXciLCJhIjoiY2pwbmRiem1uMDF2ZjN3bjI5cHJ1aG16byJ9.WImIW1cOaMvS-DaG-_18Ww';
+        
+         var human = ['#f2f5ff', '#cee1f2', '#a8cee3', '#79b6d9', '#549ccc', '#377ebd', '#20569e', '#3c3a38']
+         
+         var human_flipped = ['#20569e', '#377ebd', '#549ccc', '#79b6d9', '#a8cee3', '#cee1f2', '#f2f5ff', '#3c3a38']
+         
+         var afram_Legend = ['0 - 3.7%', '3.7 - 5.7%', '5.7 - 9.3%', '9.3 - 13.5%', '13.5 - 20.9%', '20.9 - 37.8%', '37.8 - 98.8%', 'Insufficient Data']
+         
+         var age4_Legend = ['0 - 4.3%', '4.3 - 5.0%', '5.0 - 5.9%', '5.9 - 6.8%', '6.8 - 7.9%', '7.9 - 9.2%', '9.2 - 21.4%', 'Insufficient Data']
+         
+         var age17_Legend = ['0 - 12.0%', '12.0 - 15.3%', '15.3 - 17.1%', '17.1 - 18.1%', '18.1 - 19.3%', '19.3 - 20.9%', '20.9 - 29.8%', 'Insufficient Data']
+         
+         var age64_Legend = ['0 - 56.5%', '56.5 - 58.5%', '58.5 - 60.4%', '60.4 - 62.0%', '62.0 - 63.6%', '63.6 - 66.7%', '66.7 - 99.0%', 'Insufficient Data']
+         
+         var asianLegend = ['0 - 0', '0 - .4%', '.4 - .7%', '.7 - 1.3%', '1.3 - 2.2%', '2.2 - 4.5%', '4.5 - 17.3%', 'Insufficient Data']
+         
+         var depidxLegend = ['0 - .48', '.48 - .55', '.55 - .59', '.59 - .63', '.63 - .67', '.67 - .73', '.73 - 1.18', 'Insufficient Data']
+         
+         var dividxLegend = ['0 - .49', '.49 - .58', '.58 - .64', '.64 - .71', '.71 - .77', '.77 - .86', '.86 - .99', 'Insufficient Data']
+         
+         var educLegend = ['0 - 5.8%', '5.8 - 12.7%', '12.7 - 17.2%', '17.2 - 20.7%', '20.7 - 26.4%', '26.4 - 31.9%', '31.9 - 70.2%', 'Insufficient Data']
+         
+         var fhhLegend = ['0 - 9.5%', '9.5 - 12.6%', '12.6 - 15.1%', '15.1 - 20.8%', '20.8 - 26.8%', '26.8 - 34.9%', '34.9 - 86.7%', 'Insufficient Data']
+         
+         var latinoLegend = ['0 - 1.1%', '1.1 - 2.3%', '2.3 - 3.5%', '3.5 - 5.1%', '5.1% - 7.2%', '7.2 - 11.8', '11.8 - 44.3%', 'Insufficient Data']
+         
+         var minpercLegend = ['0 - 18.0%', '18.0 - 22.2%', '22.2 - 25.5%', '25.5 - 28.9%', '28.9 - 32.9%', '32.9 - 38.5', '38.5 - 70.6%', 'Insufficient Data']
+        
+         var nonwhLegend = ['0 - 7.3%', '7.3 - 13.0%', '13.0 - 17.0%', '17.0 - 23.4%', '23.4 - 30.9%', '30.9 - 45.3%', '45.3 - 98.8%', 'Insufficient Data']
+         
+         var popdenLegend = ['0 - 114.8', '114.8 - 203.8', '203.8 - 393.6', '393.6 - 732.5', '732.5 - 1,249.8', '1,249.8 - 2,300.0', '2,300.0 - 8,357.7', 'Insufficient Data']
+         
+         var min04_Legend = ['0 - 18.0%', '18.0 - 22.2%', '22.2 - 25.5%', '25.5 - 28.9%', '28.9 - 32.9%', '32.9 - 38.5%', '38.5 - 70.6%', 'Insufficient Data']
+         
+         var chldptLegend = ['0 - 203.5', '203.5 - 263.2', '263.2 - 297.6', '297.6 - 351.0', '351.0 - 397.0', '397.0 - 457.3', '457.3 - 814.2', 'Insufficient Data']
+         
+         var preschLegend = ['0 - 4.2%', '4.2 - 10.7%', '10.7 - 15.4%', '15.4 - 21.9%', '21.9 - 30.4%', '30.4 - 40.0%', '40.0 - 100%', 'Insufficient Data']
+         
+         var whiteLegend = ['0 - 54.8%', '54.8 - 69.4%', '69.4 - 76.6%', '76.6 - 83.1%', '83.1 - 87.1%', '87.1 - 92.7%', '92.7 - 99.7%', 'Insufficient Data']
+         
+         var years = ['1990', '2000', '2010', '2016']
+        
+         var clickRight = ""
+        
+         var clickLeft = ""
+         
+         //var indicatorName = ""
+         
+         //var styleUrl = 'mapbox://styles/furmanuw/cjqi9cq8jbl0n2rp3tz46smsu';
+         
+         var indicatorName="";
+        
+         var map = "";
+        
+         var mapL = "";
+        
+         var mapR = "";  
+        
+         var rightLayer = ""
+         
+         var selectedIndicator = ""
+         
+         var previousIndicator= ""
+         
+         var clear = false;
+        
+         var indicatorLookup = [
+            {
+                name: "nonwh",
+                description: "Percent of Population That Does Not Identify as White Only",
+                format: "percent",
+            },
+             
+             {
+                name: "popden",
+                description: "Population Density (Number of People Per Square Mile)",
+                format: "index",
+            },
+            
+            {
+                name: "latino",
+                description: "Percent Latino or Hispanic",
+                format:"percent",
+            }, 
+            {
+                name: "afram_",
+                description: "Percent African American",
+                format:"percent",
+            },
+            {
+                name: "age4_",
+                description: "Percent 0-4 Years Old",
+                format:"percent",
+            },
+            {
+                name: "age17_",
+                description: "Percent 5-17 Years Old",
+                format:"percent",
+            },
+            {
+                name: "age64_",
+                description: "Percent 18-64 Years Old",
+                format:"percent",
+            },
+            {
+                name: "asian",
+                description: "Percent Asian",
+                format:"percent",
+            },
+            {
+                name: "depidx",
+                description: "Ratio of youths (17 years or less) and elderly (65 years or more) to the total population of non-dependents (18-64)",
+                format:"index",
+            },
+            {
+                name: "dividx",
+                description: "Diversity Index. 0 indicates perfect diversity. 1 indicates no diversity.",
+                format:"index",
+            },
+            {
+                name: "educ",
+                description: "Persons aged 25 years and over who have completed less than 4 years of high school as a percentage of all persons 25 years and over",
+                format:"percent",
+            },
+            {
+                name: "fhh",
+                description: "Percent of total families with female householders and no husband",
+                format:"percent",
+            },
+            {
+                name: "minperc",
+                description: "Percent of minors 0-17 out of total population",
+                format:"percent",
+            },
+             {
+                name: "min04_",
+                description: "Percent of children under 5 out of all children 17 or younger",
+                format:"percent",
+            },
+             {
+                name: "chldpt",
+                description: "Number of children under 5 years per 1,000 women aged 15 to 44 years of age",
+                format:"index",
+            },
+              {
+                name: "presch",
+                description: "Percent preschool (number of preschoolers per total 0-4 year olds)",
+                format:"percent",
+            },
+             {
+                name: "white",
+                description: "Percent white",
+                format:"percent",
+            }
+        ];
+        
+         //declare pop-ups here so that we can sync left and right maps
+
+        rightPopup = new mapboxgl.Popup({closeOnClick: false});
+        
+        leftPopup = new mapboxgl.Popup({closeOnClick: false});
+        
+        var myChart = "";
+        
+  
+        function findObjectByKey(array, key, value) {
+            for (var i = 0; i < array.length; i++) {
+                if (array[i][key] == value) {
+                    //alert(array[i]["1990"]);
+                    return array[i];
+                }   
+            }
+        }
+
+        //Get indicator description based on short name
+        
+        function getDescription(value) {
+
+            for (var i=0, iLen=indicatorLookup.length; i<iLen; i++) {
+
+                if (indicatorLookup[i].name == value) return indicatorLookup[i].description;
+            }
+        }
+        
+        //Get indicator format based on short name
+        
+        function getFormat(value) {
+
+            for (var i=0, iLen=indicatorLookup.length; i<iLen; i++) {
+
+                if (indicatorLookup[i].name == value) return indicatorLookup[i].format;
+            }
+        }
+        
+        //format the value based on format property
+        
+        function formatNumber(value, format) {
+
+            if (typeof value == "undefined") {
+              return "Insufficient Data";
+            }
+            
+            if (format == "dollars") {
+                  var formatter = new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                  minimumFractionDigits: 0,
+              });
+              roundedValue = Math.round(value)    
+              return formatter.format(roundedValue);
+                
+            } else if (format == "integer") {
+              var formatter = new Intl.NumberFormat('en-US', {
+                  minimumFractionDigits: 0,
+              });
+              roundedValue = Math.round(value)    
+              return formatter.format(roundedValue);
+                
+            } else if (format == "percent") {
+              var percent = value.toFixed(1) +"%";
+              return percent;
+            } else if (format == "index") {
+              var index = value.toFixed(3);
+              return index;
+            }
+            
+        }
+        
+        //Get the selected indicator and the specified years
+        
+        function getInput(){
+            previousIndicator = selectedIndicator;
+            //alert("previousIndicator = " + previousIndicator);
+            var indicator = document.getElementById('indicatorNames');
+            var leftRadios = document.getElementsByName("compareLeft");
+            var rightRadios = document.getElementsByName("compareRight");
+            
+            var leftRadiosLength = leftRadios.length;
+            var rightRadiosLength = rightRadios.length;
+            indicatorName = indicator.value;
+            var rightMapYear = null;
+            var leftMapYear = null;
+            
+            for(var l = 0; l < leftRadiosLength; l++){
+                if (leftRadios[l].checked) {
+                    leftMapYear = leftRadios[l].value;
+                }
+            }
+            
+            for(var r = 0; r < rightRadiosLength; r++){
+                if (rightRadios[r].checked) {
+                    rightMapYear = rightRadios[r].value;
+                }
+            }
+            //alert("right map year = " + rightMapYear);
+            
+            if(rightMapYear !== null && leftMapYear !== null){
+               //changeMaps(leftMapYear, rightMapYear, indicatorName); 
+                
+               //clear out previous legend
+               $('#bins').empty();     
+                
+              //clear out previous chart
+              $('#chartContainer').empty();
+                
+              //generate a new legend and map
+              selectedIndicator = indicatorName;    
+              changeMaps(leftMapYear, rightMapYear, indicatorName);
+              generateLegend(indicatorName);   
+                
+            } else {
+                alert("Please select a year for both the left and right maps.")
+            }
+             
+        }
+        
+        function clearMaps(previousIndicator, clearButton) {
+            if (clearButton){
+                clear = true;
+            } else {
+                clear = false;
+            }
+            //alert("clear maps name = " + previousIndicator);
+            //alert ("sources =" + mapL.getSource("url"));
+            if(previousIndicator!=''){
+                for (var y = 0; y < years.length; y++){
+                    //alert("year loop " + previousIndicator);
+                    var LmapLayer = mapL.getLayer(previousIndicator + "Yr" + years[y]);
+                    var RmapLayer = mapR.getLayer(previousIndicator + "Yr" + years[y]);
+                    if(typeof LmapLayer !== 'undefined' && typeof RmapLayer !== 'undefined'){
+                        //alert(indicatorLookup[i].name + "Yr" + years[y]);
+                        //alert("setting viz = " + previousIndicator + "Yr" + years[y]);
+                        mapL.setLayoutProperty(previousIndicator + "Yr" + years[y], 'visibility', 'none')
+                        mapR.setLayoutProperty(previousIndicator + "Yr" + years[y], 'visibility', 'none')
+                    }
+                 }
+            }
+            
+            //clear out previous legend
+               $('#bins').empty();     
+                
+              //clear out previous chart
+              $('#chartContainer').empty();
+             if(rightPopup.isOpen()){rightPopup.remove()};
+             if(leftPopup.isOpen()){leftPopup.remove()};
+            
+        }
+        
+        function changeMaps(leftMapYear, rightMapYear, selectedIndicator){
+            
+            //clear previous map layers
+            //alert("changing maps");
+            
+            clearMaps(previousIndicator, false);
+            setBaseMap(selectedIndicator);
+            //alert(selectedIndicator);
+            //alert("clear= " + clear);
+            mapL.on('load', function() {
+                //alert("L style loaded");
+                leftLayer = selectedIndicator + "Yr" + leftMapYear;
+                rightLayer = selectedIndicator + "Yr" + rightMapYear;
+                
+                //alert(leftLayer);
+                if(!clear){
+                    mapL.setLayoutProperty(leftLayer, 'visibility', 'visible');
+                    mapR.setLayoutProperty(rightLayer, 'visibility', 'visible');
+                } 
+                
+                //alert(clickLeft);
+                document.getElementById("leftMapTitle").innerHTML= "<div class ='maptitles'>" + getDescription(selectedIndicator) + " (" + leftMapYear + ")</div>";
+                document.getElementById("rightMapTitle").innerHTML= "<div class ='maptitles'>" + getDescription(selectedIndicator) + " (" + rightMapYear + ")</div>";
+                
+                if(leftPopup.isOpen()){leftPopup.remove()};
+                if(rightPopup.isOpen()){rightPopup.remove()};
+                
+                clickLeft = selectedIndicator + leftMapYear;
+                clickRight = selectedIndicator + rightMapYear
+                
+                
+                 mapL.on("click", leftLayer, function(e){ 
+                
+                //get left and right values
+                
+                dataValueLeft = eval("e.features[0].properties." + clickLeft);
+                dataValueRight = eval("e.features[0].properties." + clickRight);
+                
+                
+                //format left and right values
+                formattedValueLeft = formatNumber(dataValueLeft, getFormat(selectedIndicator));
+                formattedValueRight = formatNumber(dataValueRight, getFormat(selectedIndicator));
+                
+                //handle zeroes. They should indicate no data.
+                if (dataValueLeft =="0" && getFormat(selectedIndicator) =="dollars"){
+                    formattedValueLeft = "Data not available";
+                }
+                     
+                if (dataValueRight =="0" && getFormat(selectedIndicator) =="dollars"){
+                    formattedValueRight = "Data not available";
+                }
+                
+                leftHtml = "<b>" + getDescription(selectedIndicator) +": </b>" + formattedValueLeft;
+                rightHtml= "<b>" + getDescription(selectedIndicator) +": </b>" + formattedValueRight;
+                     
+                //alert("formatted Value left:" + formattedValueLeft);
+                
+                var neighborhood = eval("e.features[0].properties." + "Neighborhood");
+                var name = eval("e.features[0].properties." + "Name");
+                
+                //add neighborhood and name info if defined
+                
+                if (typeof name !== "undefined" && name !== ""){
+                    leftHtml += "<br/><b>ID:</b> " + name; 
+                    rightHtml += "<br/><b>ID:</b> " + name; 
+                }
+                
+                if (typeof neighborhood !== "undefined" && neighborhood !== "" && neighborhood !== "-"){
+                    leftHtml += "<br/>" + "<b>Neighborhoods Include:</b> " + neighborhood;  
+                    rightHtml += "<br/>" + "<b>Neighborhoods Include:</b> " + neighborhood;   
+                }
+                
+                //load all the data values for the chart
+                var year1990 = eval("e.features[0].properties." + selectedIndicator + "1990");
+                var year2000 = eval("e.features[0].properties." + selectedIndicator + "2000");
+                var year2010 = eval("e.features[0].properties." + selectedIndicator + "2010");
+                var year2016 = eval("e.features[0].properties." + selectedIndicator + "2016");
+                
+                
+                //show appropriate popups on both left and right map
+                
+                leftPopup.setLngLat(e.lngLat);  
+                leftPopup.setHTML(leftHtml);
+                leftPopup.addTo(mapL);
+                     
+                rightPopup.setLngLat(e.lngLat);
+                rightPopup.setHTML(rightHtml);
+                rightPopup.addTo(mapR);
+                
+                
+                //generate high chart
+                //$('#bins').empty();
+                county = eval("e.features[0].properties.County");
+                //alert(county);
+                generateChart(selectedIndicator, year1990, year2000, year2010, year2016, name, neighborhood, county);
+
+                })
+            });  
+            
+            
+            mapR.on('load', function() {
+                
+                //alert("R style loaded");
+                //alert(clear);
+                
+                leftLayer = selectedIndicator + "Yr" + leftMapYear;
+                rightLayer = selectedIndicator + "Yr" + rightMapYear;
+                if(!clear){
+                    mapR.setLayoutProperty(rightLayer, 'visibility', 'visible');
+                    mapL.setLayoutProperty(leftLayer, 'visibility', 'visible');
+                }
+            
+                //set the map titles
+                document.getElementById("rightMapTitle").innerHTML= "<div class ='maptitles'>" + getDescription(selectedIndicator) + " (" + rightMapYear + ")</div>";
+                document.getElementById("leftMapTitle").innerHTML= "<div class ='maptitles'>" + getDescription(selectedIndicator) + " (" + leftMapYear + ")</div>";
+            
+                //close previous popups if open
+            
+                if(rightPopup.isOpen()){rightPopup.remove()};
+                if(leftPopup.isOpen()){leftPopup.remove()};
+                
+                clickRight = selectedIndicator + rightMapYear;
+                clickLeft = selectedIndicator + leftMapYear;
+           
+            
+                mapR.on("click", rightLayer, function(e){ 
+                    //alert(dataValueRight);
+
+                    dataValueRight = eval("e.features[0].properties." + clickRight);
+                    dataValueLeft = eval("e.features[0].properties." + clickLeft);
+                    
+                    
+                    formattedValueRight = formatNumber(dataValueRight, getFormat(selectedIndicator));
+                    formattedValueLeft = formatNumber(dataValueLeft, getFormat(selectedIndicator));
+
+                     //handle zeroes. They should indicate no data.
+
+                     if (dataValueRight =="0" && getFormat(selectedIndicator) =="dollars"){
+                        formattedValueRight = "Data not available";
+                    }
+                    
+                    if (dataValueLeft =="0" && getFormat(selectedIndicator) =="dollars"){
+                        formattedValueLeft = "Data not available";
+                    }   
+
+                    rightHtml= "<b>" + getDescription(selectedIndicator) +": </b>" + formattedValueRight;
+                    leftHtml = "<b>" + getDescription(selectedIndicator) +": </b>" + formattedValueLeft;
+
+                    var neighborhood = eval("e.features[0].properties." + "Neighborhood");
+                    var name = eval("e.features[0].properties." + "Name");
+
+
+                    //add neighborhood and name info if defined
+
+                    if (typeof name !== "undefined" && name !== ""){
+                        rightHtml += "<br/><b>ID:</b> " + name; 
+                        leftHtml += "<br/><b>ID:</b> " + name; 
+                    }
+
+                    if (typeof neighborhood !== "undefined" && neighborhood !== "" && neighborhood !== "-"){  
+                        rightHtml += "<br/>" + "<b>Neighborhoods Include:</b> " + neighborhood;   
+                        leftHtml += "<br/>" + "<b>Neighborhoods Include:</b> " + neighborhood;  
+                    }
+
+                    //load all the data values for the chart
+                    var year1990 = eval("e.features[0].properties." + selectedIndicator + "1990");
+                    var year2000 = eval("e.features[0].properties." + selectedIndicator + "2000");
+                    var year2010 = eval("e.features[0].properties." + selectedIndicator + "2010");
+                    var year2016 = eval("e.features[0].properties." + selectedIndicator + "2016");
+
+                    //show appropriate popups on both left and right map
+                    rightPopup.setLngLat(e.lngLat);
+                    rightPopup.setHTML(rightHtml);
+                    rightPopup.addTo(mapR);
+                    
+                    leftPopup.setLngLat(e.lngLat);  
+                    leftPopup.setHTML(leftHtml);
+                    leftPopup.addTo(mapL);
+
+                    //generate high chart
+                    //$('#bins').empty();
+                    county = eval("e.features[0].properties.County");
+                    generateChart(selectedIndicator, year1990, year2000, year2010, year2016, name, neighborhood, county);
+
+                })
+            }); 
+                
+            
+            
+        }
+        
+        function setBaseMap (indicatorName) {
+            
+           
+            mapL = new mapboxgl.Map({
+            container: 'leftMap',
+            center: [-82.300316, 34.857192],
+            zoom: 9,
+            });
+
+            // Add zoom and rotation controls to the map.
+            mapL.addControl(new mapboxgl.NavigationControl());
+
+
+            ////////////////////////////////////////////////////////////////
+            //right map//
+
+            mapR = new mapboxgl.Map({
+            container: 'rightMap',
+            center: [-82.300316, 34.857192],
+            zoom: 9,
+            });
+            mapR.addControl(new mapboxgl.NavigationControl());
+                
+            if (indicatorName =='popden' || indicatorName =='min04_' || indicatorName =='chldpt' || indicatorName =='presch' || indicatorName =='white'){
+                mapL.setStyle('mapbox://styles/furmanuw/cjqiiuu1dmrdj2rphozaflwb5');
+                mapR.setStyle('mapbox://styles/furmanuw/cjqiiuu1dmrdj2rphozaflwb5');
+
+            } else {
+                mapL.setStyle('mapbox://styles/furmanuw/cjqi9cq8jbl0n2rp3tz46smsu');
+                mapR.setStyle('mapbox://styles/furmanuw/cjqi9cq8jbl0n2rp3tz46smsu');
+                
+            }
+            
+            map = new mapboxgl.Compare(mapR, mapL, {
+            // Set this to enable comparing two maps by mouse movement:
+            // mousemove: false
+            });
+        }
+        
+        function generateLegend(indicatorName){
+            
+            for (var i = 0; i < 8; i++){
+                
+                //set the legend element color
+                //document.getElementById("bin"+i).style.backgroundColor= financial[i]
+                
+                //set the legend value 
+                //document.getElementById("bin"+i).innerHTML= eval(indicatorName + "Legend")[i]
+                
+                var color = human[i];
+                
+                if (indicatorName == 'dividx') {
+                    //flip the ramp if diversity index
+                    color = human_flipped[i];
+                }
+                var layer = eval(indicatorName + "Legend")[i]
+             
+                
+                var item = document.createElement('div');
+                var key = document.createElement('span');
+                key.style.verticalAlign = "middle";
+                //key.className = "bin"+i;
+                key.className = 'legend-key';
+                key.style.backgroundColor = color;
+                var value = document.createElement('span');
+                value.style.backgroundColor ='white';
+                value.innerHTML = layer;
+                item.appendChild(key);
+                item.appendChild(value);
+                bins.appendChild(item);
+               
+            }
+            
+        }
+        
+        function undefinedToNull(value) {
+            if (typeof value == "undefined") {
+                return null;
+            } else {
+                return value;
+            }
+            
+        }
+        
+        function fixZeroes(value, indicatorType) {
+            if (value == "0" && indicatorType == "dollars") {
+                return null;
+            } else {
+                return value;
+            }
+            
+        }
+        
+        
+        function generateChart(indicatorName, year1990, year2000, year2010, year2016, name, neighborhood, county) {
+        
+            //High Charts handles null well, but not undefined. Check for undefined and convert to null.
+           
+            year1990 = undefinedToNull(year1990);
+            year2000 = undefinedToNull(year2000);
+            year2010 = undefinedToNull(year2010);
+            year2016 = undefinedToNull(year2016);
+            var visible = false;
+            var countyName= "";
+            var jsonData = [];
+            //alert(county);
+
+            if(county=="45") {
+                //get the median county values from the json file
+                visible = true;
+                countyName = "County Value";
+                url = 'human.json';
+                $.ajax({
+                  type: 'GET',
+                  cache: false,
+                  url: url,
+                  dataType: 'json',
+                  success: function(data) { jsonData = data;},
+                  async: false
+                });
+
+                //alert(jsonData);
+
+                /*
+                var request = new XMLHttpRequest();
+                request.open("GET", "financial.json", false);
+                request.overrideMimeType("application/json");
+                request.send(null);
+                */
+
+                //get the array for the selected indicator
+                medianArray = findObjectByKey(jsonData, "indicator", indicatorName);
+                //alert(indicatorName);
+
+                //get the values for the different years
+
+                medianYear1990 = medianArray["1990"];
+                //alert(medianYear1990);
+                medianYear2000 = medianArray["2000"];
+                medianYear2010 = medianArray["2010"];
+                medianYear2016 = medianArray["2016"];
+            }
+            
+            indicatorDescription = getDescription(indicatorName);
+            indicatorFormat = getFormat(indicatorName);
+            
+                        
+            //fix zeroes for dollar values 
+            
+            year1990 = fixZeroes(year1990, indicatorFormat);
+            year2000 = fixZeroes(year2000, indicatorFormat);
+            year2010 = fixZeroes(year2010, indicatorFormat);
+            year2016 = fixZeroes(year2016, indicatorFormat);
+            
+            var subTitleLabel = ""; 
+            
+            if (typeof name !== "undefined" && name !== ""){
+                subTitleLabel += "<b>ID:</b> " + name;   
+            }
+             if (typeof neighborhood !== "undefined" && neighborhood !== "" && neighborhood !== "-"){
+                subTitleLabel += "<br/>" + "<b>Neighborhoods Include:</b> " + neighborhood;   
+            }
+
+            
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            });
+            
+            
+            myChart = Highcharts.chart('chartContainer', {
+              chart: {
+                        type: 'line'
+              }, 
+                    
+             title: {
+                        text: indicatorDescription
+             },
+            
+            subtitle: {
+                        text: subTitleLabel
+             },
+                
+            tooltip: {
+                  formatter: function() {
+                      
+                      if (indicatorFormat =='dollars'){
+
+                        return '$' + Highcharts.numberFormat(this.y, 0, '.', ',');
+                          
+                      } else if (indicatorFormat == 'integer') {
+
+                        return Highcharts.numberFormat(this.y, 0, '.', ',');
+                          
+                      } else if (indicatorFormat == 'percent') {
+
+                        return Highcharts.numberFormat(this.y, 1, '.', ',') + '%';
+                     
+                      } else if (indicatorFormat == 'index') {
+                        return Highcharts.numberFormat(this.y, 3, '.', ',');
+                      }
+                  },
+                },
+                    
+                xAxis: {
+                    categories: ['1990', '2000', '2010', '2016'],
+                    title: {
+                        text: "Year"
+                    }
+
+                }, 
+                
+                legend: {
+                    enabled: true
+                },
+                    
+                yAxis: {
+                    title: {
+                        text: indicatorDescription
+                    }
+                },
+                
+                plotOptions: {
+                    line: {
+                    dataLabels: {
+                        enabled: true,
+                        formatter: function() {
+                            if (indicatorFormat =='dollars'){
+                                return '$' + Highcharts.numberFormat(this.y, 0, '.', ',');
+                            } else if (indicatorFormat == 'integer') {
+                                return Highcharts.numberFormat(this.y, 0, '.', ',');
+                            } else if (indicatorFormat == 'percent') {
+                                return Highcharts.numberFormat(this.y, 1, '.', ',') + '%';
+                            } else if (indicatorFormat == 'index') {
+                                return Highcharts.numberFormat(this.y, 3, '.', ',');
+                            }
+                        },
+                    },
+                        enableMouseTracking: true
+                    },
+                },
+                series: [{
+                    name: name,
+                    data: [year1990, year2000, year2010, year2016],
+                }, 
+                         
+                {
+                    name: countyName,
+                    data: [medianYear1990, medianYear2000, medianYear2010, medianYear2016],
+                    color: "orange",
+                    visible: visible,
+                }]  
+            })
+    }
+    //alert("selected indicator = " + selectedIndicator);
+    setBaseMap(selectedIndicator);
+        
+    </script>
+
+    </body>
+</html>
