@@ -1,0 +1,2334 @@
+[
+  {
+    "name": "medrnt",
+    "description": "Median Rent",
+    "format": "dollars",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 521
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 627
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 600
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 645
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "$0 - 385"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "$386 - 434"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "$435 - 468"
+      },
+      {
+        "color": "#74c477",
+        "label": "$469 - 512"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "$513 - 568"
+      },
+      {
+        "color": "#238c46",
+        "label": "$569 - 681"
+      },
+      {
+        "color": "#005931",
+        "label": "$682 - 1383"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "capinc",
+    "description": "Per Capita Income",
+    "format": "dollars",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 26080
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 31903
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 28602
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 28065
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "$0-15,638"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "$15,639-19,501"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "$19,502-21,846"
+      },
+      {
+        "color": "#74c477",
+        "label": "$21,847-24,471"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "$24,472-27,726"
+      },
+      {
+        "color": "#238c46",
+        "label": "$27,727-33,313"
+      },
+      {
+        "color": "#005931",
+        "label": "$33,314-72,315"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "snap",
+    "description": "SNAP",
+    "format": "percent",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": ""
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": ""
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 9.1
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 11.2
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "0 - 3.0%"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "3.0 - 5.6%"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "5.6 - 7.9%"
+      },
+      {
+        "color": "#74c477",
+        "label": "7.9 - 10.3%"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "10.3 - 13.5%"
+      },
+      {
+        "color": "#238c46",
+        "label": "13.5 - 20.5%"
+      },
+      {
+        "color": "#005931",
+        "label": "20.5 - 58.7%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "hocost",
+    "description": "Percent of Households with Mortage Costs Exceeding 35% of Household Income",
+    "format": "percent",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 9.8
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 13.2
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 17.9
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 13.3
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "0 - 8.0%"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "8.0 - 12.5%"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "12.5 - 15.8%"
+      },
+      {
+        "color": "#74c477",
+        "label": "15.8 - 19.6%"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "19.6 - 24.1%"
+      },
+      {
+        "color": "#238c46",
+        "label": "24.1 - 30.5%"
+      },
+      {
+        "color": "#005931",
+        "label": "30.5 - 43.3%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "medhv",
+    "description": "Median House Value",
+    "format": "dollars",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 117324
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 156228
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 163354
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 160900
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "$0 - 86,433"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "$86,433 - 100,085"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "$100,085 - 114,729"
+      },
+      {
+        "color": "#74c477",
+        "label": "$114,729 - 135,648"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "$135,648 - 165,597"
+      },
+      {
+        "color": "#238c46",
+        "label": "$165,597 - 193,233"
+      },
+      {
+        "color": "#005931",
+        "label": "$193,233 - 533,500"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "unemp",
+    "description": "Unemployment",
+    "format": "percent",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 4.6
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 4.6
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 8
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 6.4
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "0 - 2.2%"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "2.2 - 3.2%"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "3.2 - 3.9%"
+      },
+      {
+        "color": "#74c477",
+        "label": "3.9 - 4.8%"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "4.8 - 6.0%"
+      },
+      {
+        "color": "#238c46",
+        "label": "6.0 - 8.3%"
+      },
+      {
+        "color": "#005931",
+        "label": "8.3 - 32.5%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "povind",
+    "description": "Individual Poverty Status",
+    "format": "percent",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 10.5
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 10.5
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 14.1
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 14.3
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "0 - 6.4%"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "6.4 - 9.4%"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "9.4 - 13.5%"
+      },
+      {
+        "color": "#74c477",
+        "label": "13.5 - 18.2%"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "18.2 - 21.8%"
+      },
+      {
+        "color": "#238c46",
+        "label": "21.8 - 30.4%"
+      },
+      {
+        "color": "#005931",
+        "label": "30.4 - 76.4%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "gini",
+    "description": "Gini Index (Income Inequality)",
+    "format": "index",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": ""
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": ""
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 0.47
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 0.47
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "0 - .358"
+      },
+      {
+        "color": "#c5e8be",
+        "label": ".359 - .394"
+      },
+      {
+        "color": "#a0d99a",
+        "label": ".395 - .414"
+      },
+      {
+        "color": "#74c477",
+        "label": ".415 - .432"
+      },
+      {
+        "color": "#41ab5d",
+        "label": ".433 - .457"
+      },
+      {
+        "color": "#238c46",
+        "label": ".458 - .490"
+      },
+      {
+        "color": "#005931",
+        "label": ".491 - .728"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "povfam",
+    "description": "Family Poverty Status",
+    "format": "percent",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 8.3
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 8.9
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 12.1
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 12.1
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "0 - 3.9%"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "3.9 - 7.3%"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "7.3 - 10.4%"
+      },
+      {
+        "color": "#74c477",
+        "label": "10.4 - 15.3%"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "15.3 - 19.4%"
+      },
+      {
+        "color": "#238c46",
+        "label": "19.4 - 27.2%"
+      },
+      {
+        "color": "#005931",
+        "label": "27.2 - 77.8%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "medinc",
+    "description": "Median Household Income",
+    "format": "dollars",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 54505
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 59452
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 51653
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 51595
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "$0 - 28,859"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "$28,859 - 36,984"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "$36,984 - 43,742"
+      },
+      {
+        "color": "#74c477",
+        "label": "$43,742 - 49,273"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "$49,273 - 57,056"
+      },
+      {
+        "color": "#238c46",
+        "label": "$57,056 - 66,282"
+      },
+      {
+        "color": "#005931",
+        "label": "$66,282 - 148,405"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "insure",
+    "description": "No Health Insurance",
+    "format": "percent",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": ""
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": ""
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": ""
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 13.5
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "0 - 7.7%"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "7.7 - 10.2%"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "10.2 - 11.9%"
+      },
+      {
+        "color": "#74c477",
+        "label": "11.9 - 13.8%"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "13.8 - 16.3%"
+      },
+      {
+        "color": "#238c46",
+        "label": "16.3 - 31.2%"
+      },
+      {
+        "color": "#005931",
+        "label": "31.2 - 37.3%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "rntcost",
+    "description": "Percent of Households with Rental Costs Exceeding 35% of Household Income",
+    "format": "percent",
+    "type": "financial",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 25.3
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 27.8
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 38
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 38.1
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ecf7e9",
+        "label": "0 - 21.3%"
+      },
+      {
+        "color": "#c5e8be",
+        "label": "21.3 - 30.1%"
+      },
+      {
+        "color": "#a0d99a",
+        "label": "30.1 - 36.0%"
+      },
+      {
+        "color": "#74c477",
+        "label": "36.0 - 41.5%"
+      },
+      {
+        "color": "#41ab5d",
+        "label": "41.5 - 47.3%"
+      },
+      {
+        "color": "#238c46",
+        "label": "47.3 - 53.1%"
+      },
+      {
+        "color": "#005931",
+        "label": "53.1 - 100.0%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "B1940_",
+    "description": "Percent of total housing units built in 1939 or earlier out of the total housing units",
+    "format": "percent",
+    "type": "manufactured",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 9
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 6.4
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 5
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 4.2
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ffedde",
+        "label": "0 - .7%"
+      },
+      {
+        "color": "#fccfa2",
+        "label": ".7 - 1.6%"
+      },
+      {
+        "color": "#fcae6a",
+        "label": "1.6 - 2.9%"
+      },
+      {
+        "color": "#fc8d3d",
+        "label": "2.9 - 4.6%"
+      },
+      {
+        "color": "#f26913",
+        "label": "4.6 - 7.8%"
+      },
+      {
+        "color": "#d94800",
+        "label": "7.8 - 14.8%"
+      },
+      {
+        "color": "#8c2d04",
+        "label": "14.8 - 55.3%"
+      }
+    ]
+  },
+  {
+    "name": "heat",
+    "description": "Percentage of occupied housing units with inadequate heating fuel. Defined as using either: Fuel oil, kerosene, etc.; Coal or coke; Wood; or No fuel used",
+    "format": "percent",
+    "type": "manufactured",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 26.8
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 9.9
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 4.6
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 2.6
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ffedde",
+        "label": "0 - 3.1%"
+      },
+      {
+        "color": "#fccfa2",
+        "label": "3.1 - 5.9%"
+      },
+      {
+        "color": "#fcae6a",
+        "label": "5.9 - 9.6%"
+      },
+      {
+        "color": "#fc8d3d",
+        "label": "9.6 - 11.3%"
+      },
+      {
+        "color": "#f26913",
+        "label": "11.3 - 14.3%"
+      },
+      {
+        "color": "#d94800",
+        "label": "14.3 - 18.6%"
+      },
+      {
+        "color": "#8c2d04",
+        "label": "18.6 - 59.4%"
+      }
+    ]
+  },
+  {
+    "name": "mhome",
+    "description": "Percent of occupied housing units that are defined as mobile homes",
+    "format": "percent",
+    "type": "manufactured",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 10
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 10.7
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 9.6
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 9
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ffedde",
+        "label": "0 - 1.3%"
+      },
+      {
+        "color": "#fccfa2",
+        "label": "1.3 - 3.5%"
+      },
+      {
+        "color": "#fcae6a",
+        "label": "3.5 - 7.4%"
+      },
+      {
+        "color": "#fc8d3d",
+        "label": "7.4 - 14.4%"
+      },
+      {
+        "color": "#f26913",
+        "label": "14.4 - 21.7%"
+      },
+      {
+        "color": "#d94800",
+        "label": "21.7 - 31.5%"
+      },
+      {
+        "color": "#8c2d04",
+        "label": "31.5 - 54.2%"
+      }
+    ]
+  },
+  {
+    "name": "rentocc",
+    "description": "Percentage of occupied housing units that are currently renter-occupied",
+    "format": "percent",
+    "type": "manufactured",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 33.8
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 31.8
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 32
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 34.3
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ffedde",
+        "label": "0 - 12.8%"
+      },
+      {
+        "color": "#fccfa2",
+        "label": "12.8 - 18.0%"
+      },
+      {
+        "color": "#fcae6a",
+        "label": "18.0 - 24.1%"
+      },
+      {
+        "color": "#fc8d3d",
+        "label": "24.1 - 30.5%"
+      },
+      {
+        "color": "#f26913",
+        "label": "30.5 - 39.6%"
+      },
+      {
+        "color": "#d94800",
+        "label": "39.6 - 57.7%"
+      },
+      {
+        "color": "#8c2d04",
+        "label": "57.7 - 98.9%"
+      }
+    ]
+  },
+  {
+    "name": "vacant",
+    "description": "Percentage of housing units that are vacant/unoccupied",
+    "format": "percent",
+    "type": "manufactured",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 6.7
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 8.1
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 10.4
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 9.5
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ffedde",
+        "label": "0 - 5.7%"
+      },
+      {
+        "color": "#fccfa2",
+        "label": "5.7 - 8.2%"
+      },
+      {
+        "color": "#fcae6a",
+        "label": "8.2 - 10.1%"
+      },
+      {
+        "color": "#fc8d3d",
+        "label": "10.1 - 12.8%"
+      },
+      {
+        "color": "#f26913",
+        "label": "12.8 - 15.2%"
+      },
+      {
+        "color": "#d94800",
+        "label": "15.2 - 19.1%"
+      },
+      {
+        "color": "#8c2d04",
+        "label": "19.1 - 47.8%"
+      }
+    ]
+  },
+  {
+    "name": "vehicle",
+    "description": "Percentage of occupied housing units with no vehicles available",
+    "format": "percent",
+    "type": "manufactured",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 8.8
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 7.6
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 6.3
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 6.3
+      }
+    ],
+    "legend": [
+      {
+        "color": "#ffedde",
+        "label": "0 - 2.5%"
+      },
+      {
+        "color": "#fccfa2",
+        "label": "2.5 - 3.9%"
+      },
+      {
+        "color": "#fcae6a",
+        "label": "3.9 - 5.4%"
+      },
+      {
+        "color": "#fc8d3d",
+        "label": "5.4 - 7.7%"
+      },
+      {
+        "color": "#f26913",
+        "label": "7.7 - 16.0%"
+      },
+      {
+        "color": "#d94800",
+        "label": "16.0 - 34.5%"
+      },
+      {
+        "color": "#8c2d04",
+        "label": "34.5 - 59.3"
+      }
+    ]
+  },
+  {
+    "name": "lingiso",
+    "description": "Percentage of households where all individuals 14 or older have some difficulty speaking English",
+    "format": "percent",
+    "type": "social",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 0.5
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 1.8
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 3.6
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 3.5
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f3f2f7",
+        "label": "0%"
+      },
+      {
+        "color": "#dfdfed",
+        "label": "0 - .7%"
+      },
+      {
+        "color": "#c1c4de",
+        "label": ".7 - 1.4%"
+      },
+      {
+        "color": "#a7a3cc",
+        "label": "1.4 - 1.9%"
+      },
+      {
+        "color": "#8e8cc2",
+        "label": "1.9 - 3.1%"
+      },
+      {
+        "color": "#7963ab",
+        "label": "3.1 - 5.3%"
+      },
+      {
+        "color": "#5d2c94",
+        "label": "5.3 - 24.4%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "moved",
+    "description": "Percent of population that moved to a different MSA (Metropolitan Statistical Area) within the last five years",
+    "format": "percent",
+    "type": "social",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 45.8
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 48.5
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": ""
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": ""
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f3f2f7",
+        "label": "0 - 34.6%"
+      },
+      {
+        "color": "#dfdfed",
+        "label": "34.6 - 37.0"
+      },
+      {
+        "color": "#c1c4de",
+        "label": "37.0 - 40.0"
+      },
+      {
+        "color": "#a7a3cc",
+        "label": "40.0 - 42.8"
+      },
+      {
+        "color": "#8e8cc2",
+        "label": "42.8 - 47.0"
+      },
+      {
+        "color": "#7963ab",
+        "label": "47.0 - 54.2%"
+      },
+      {
+        "color": "#5d2c94",
+        "label": "54.2 - 91.5%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "movedlast",
+    "description": "Percent of population that moved to a different MSA (Metropolitan Statistical Area) within the last year",
+    "format": "percent",
+    "type": "social",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": ""
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": ""
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 17.2
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 13.7
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f3f2f7",
+        "label": "0 - 8.5%"
+      },
+      {
+        "color": "#dfdfed",
+        "label": "8.5 - 10.9%"
+      },
+      {
+        "color": "#c1c4de",
+        "label": "10.9 - 14.2%"
+      },
+      {
+        "color": "#a7a3cc",
+        "label": "14.2 - 16.6%"
+      },
+      {
+        "color": "#8e8cc2",
+        "label": "16.6 - 19.5%"
+      },
+      {
+        "color": "#7963ab",
+        "label": "19.5 - 25.8%"
+      },
+      {
+        "color": "#5d2c94",
+        "label": "25.8 - 57.8%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "nonwh",
+    "description": "Percent of Population That Does Not Identify as White Only",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 19.1
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 22.5
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 23.3
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 24
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 7.3%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "7.3 - 13.0%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "13.0 - 17.0%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "17.0 - 23.4%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "23.4 - 30.9%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "30.9 - 45.3%"
+      },
+      {
+        "color": "#20569e",
+        "label": "45.3 - 98.8%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "popden",
+    "description": "Population Density (Number of People Per Square Mile)",
+    "format": "index",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 404.2
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 480.5
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 555.9
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 614.1
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 114.8"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "114.8 - 203.8"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "203.8 - 393.6"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "393.6 - 732.5"
+      },
+      {
+        "color": "#549ccc",
+        "label": "732.5 - 1,249.8"
+      },
+      {
+        "color": "#377ebd",
+        "label": "1,249.8 - 2,300.0"
+      },
+      {
+        "color": "#20569e",
+        "label": "2,300.0 - 8,357.7"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "latino",
+    "description": "Percent Latino or Hispanic",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 0.9
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 3.8
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 7.4
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 8.7
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 1.1%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "1.1 - 2.3%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "2.3 - 3.5%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "3.5 - 5.1%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "5.1% - 7.2%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "7.2 - 11.8"
+      },
+      {
+        "color": "#20569e",
+        "label": "11.8 - 44.3%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "afram_",
+    "description": "Percent African American",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 18
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 18.3
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 17.8
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 18.3
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 3.7%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "3.7 - 5.7%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "5.7 - 9.3%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "9.3 - 13.5%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "13.5 - 20.9%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "20.9 - 37.8%"
+      },
+      {
+        "color": "#20569e",
+        "label": "37.8 - 98.8%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "age4_",
+    "description": "Percent 0-4 Years Old",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 7.1
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 6.8
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 6.9
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 6.5
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 4.3%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "4.3 - 5.0%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "5.0 - 5.9%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "5.9 - 6.8%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "6.8 - 7.9%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "7.9 - 9.2%"
+      },
+      {
+        "color": "#20569e",
+        "label": "9.2 - 21.4%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "age17_",
+    "description": "Percent 5-17 Years Old",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 17.6
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 17.8
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 17.5
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 17
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 12.0%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "12.0 - 15.3%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "15.3 - 17.1%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "17.1 - 18.1%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "18.1 - 19.3%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "19.3 - 20.9%"
+      },
+      {
+        "color": "#20569e",
+        "label": "20.9 - 29.8%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "age64_",
+    "description": "Percent 18-64 Years Old",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 63.5
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 63.7
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 63.2
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 62.2
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 56.5%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "56.5 - 58.5%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "58.5 - 60.4%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "60.4 - 62.0%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "62.0 - 63.6%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "63.6 - 66.7%"
+      },
+      {
+        "color": "#20569e",
+        "label": "66.7 - 99.0%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "asian",
+    "description": "Percent Asian",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 0.7
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 1.4
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 1.9
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 2.1
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 0"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "0 - .4%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": ".4 - .7%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": ".7 - 1.3%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "1.3 - 2.2%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "2.2 - 4.5%"
+      },
+      {
+        "color": "#20569e",
+        "label": "4.5 - 17.3%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "depidx",
+    "description": "Ratio of youths (17 years or less) and elderly (65 years or more) to the total population of non-dependents (18-64)",
+    "format": "index",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 0.57504366
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 0.571
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 0.583
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 0.609
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - .48"
+      },
+      {
+        "color": "#cee1f2",
+        "label": ".48 - .55"
+      },
+      {
+        "color": "#a8cee3",
+        "label": ".55 - .59"
+      },
+      {
+        "color": "#79b6d9",
+        "label": ".59 - .63"
+      },
+      {
+        "color": "#549ccc",
+        "label": ".63 - .67"
+      },
+      {
+        "color": "#377ebd",
+        "label": ".67 - .73"
+      },
+      {
+        "color": "#20569e",
+        "label": ".73 - 1.18"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "dividx",
+    "description": "Diversity Index. 0 indicates perfect diversity. 1 indicates no diversity.",
+    "format": "index",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 0.688
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 0.635
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 0.621
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 0.612
+      }
+    ],
+    "legend": [
+      {
+        "color": "#3c3a38",
+        "label": "0 - .49"
+      },
+      {
+        "color": "#20569e",
+        "label": ".49 - .58"
+      },
+      {
+        "color": "#377ebd",
+        "label": ".58 - .64"
+      },
+      {
+        "color": "#549ccc",
+        "label": ".64 - .71"
+      },
+      {
+        "color": "#79b6d9",
+        "label": ".71 - .77"
+      },
+      {
+        "color": "#a8cee3",
+        "label": ".77 - .86"
+      },
+      {
+        "color": "#cee1f2",
+        "label": ".86 - .99"
+      },
+      {
+        "color": "#f2f5ff",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "educ",
+    "description": "Persons aged 25 years and over who have completed less than 4 years of high school as a percentage of all persons 25 years and over",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 28.4
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 20.5
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 16
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 13.1
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 5.8%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "5.8 - 12.7%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "12.7 - 17.2%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "17.2 - 20.7%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "20.7 - 26.4%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "26.4 - 31.9%"
+      },
+      {
+        "color": "#20569e",
+        "label": "31.9 - 70.2%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "fhh",
+    "description": "Percent of total families with female householders and no husband",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 16.90160074
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 11.2
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 20
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 19.42015232
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 9.5%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "9.5 - 12.6%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "12.6 - 15.1%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "15.1 - 20.8%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "20.8 - 26.8%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "26.8 - 34.9%"
+      },
+      {
+        "color": "#20569e",
+        "label": "34.9 - 86.7%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "minperc",
+    "description": "Percent of minors 0-17 out of total population",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 24.6
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 24.59959538
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 24.4
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 23.5
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 18.0%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "18.0 - 22.2%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "22.2 - 25.5%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "25.5 - 28.9%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "28.9 - 32.9%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "32.9 - 38.5"
+      },
+      {
+        "color": "#20569e",
+        "label": "38.5 - 70.6%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "min04_",
+    "description": "Percent of children under 5 out of all children 17 or younger",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 28.7
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 27.5
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 28.2
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 27.6
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 18.0%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "18.0 - 22.2%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "22.2 - 25.5%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "25.5 - 28.9%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "28.9 - 32.9%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "32.9 - 38.5%"
+      },
+      {
+        "color": "#20569e",
+        "label": "38.5 - 70.6%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "chldpt",
+    "description": "Number of children under 5 years per 1,000 women aged 15 to 44 years of age",
+    "format": "index",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 291.1451149
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 301.9158802
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 328.4
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 323.2
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 203.5"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "203.5 - 263.2"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "263.2 - 297.6"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "297.6 - 351.0"
+      },
+      {
+        "color": "#549ccc",
+        "label": "351.0 - 397.0"
+      },
+      {
+        "color": "#377ebd",
+        "label": "397.0 - 457.3"
+      },
+      {
+        "color": "#20569e",
+        "label": "457.3 - 814.2"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "presch",
+    "description": "Percent preschool (number of preschoolers per total 0-4 year olds)",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 23.00199247
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 24.1
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 23.7
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 20.2
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 4.2%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "4.2 - 10.7%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "10.7 - 15.4%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "15.4 - 21.9%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "21.9 - 30.4%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "30.4 - 40.0%"
+      },
+      {
+        "color": "#20569e",
+        "label": "40.0 - 100%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  },
+  {
+    "name": "white",
+    "description": "Percent white",
+    "format": "percent",
+    "type": "human",
+    "data": [
+      {
+        "county": 45,
+        "year": 1990,
+        "value": 81
+      },
+      {
+        "county": 45,
+        "year": 2000,
+        "value": 77.5
+      },
+      {
+        "county": 45,
+        "year": 2010,
+        "value": 76.7
+      },
+      {
+        "county": 45,
+        "year": 2016,
+        "value": 76
+      }
+    ],
+    "legend": [
+      {
+        "color": "#f2f5ff",
+        "label": "0 - 54.8%"
+      },
+      {
+        "color": "#cee1f2",
+        "label": "54.8 - 69.4%"
+      },
+      {
+        "color": "#a8cee3",
+        "label": "69.4 - 76.6%"
+      },
+      {
+        "color": "#79b6d9",
+        "label": "76.6 - 83.1%"
+      },
+      {
+        "color": "#549ccc",
+        "label": "83.1 - 87.1%"
+      },
+      {
+        "color": "#377ebd",
+        "label": "87.1 - 92.7%"
+      },
+      {
+        "color": "#20569e",
+        "label": "92.7 - 99.7%"
+      },
+      {
+        "color": "#3c3a38",
+        "label": "Insufficient Data"
+      }
+    ]
+  }
+]
