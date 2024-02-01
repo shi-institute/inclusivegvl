@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import { base } from '$app/paths';
 	import MapOptions from '$lib/components/MapOptions.svelte';
 	import syncMaps from '@mapbox/mapbox-gl-sync-move';
@@ -266,6 +265,9 @@
 <div class="row">
 	<div class="column left">
 		<div class="legend">
+			<div class="link">
+				<a href="{base}/" rel="external">← Home</a>
+			</div>
 			<div class="link">
 				<a href="{base}/indicator_descriptions.pdf" rel="external">Indicator Descriptions</a>
 			</div>
