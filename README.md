@@ -1,38 +1,19 @@
-# create-svelte
+# Inclusive Greenville indicator maps
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This repository contains the map pages for [inclusivegvl.org](https://inclusivegvl.org/).
 
-## Creating a project
+## Developing locally
 
-If you're seeing this, you've probably already done this step. Congrats!
+To make changes locally, you will need to have Git, Node, and NPM installed. Then:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+1. Open a terminal and clone this repository with `git clone https://github.com/shi-institute/inclusivegvl`.
+2. Run `cd inclusivegvl` to change to change your working directory to the cloned repository.
+3. Run `npm install` to install the required dependencies.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+To preview your changes as you make them, start at local development server with `npm run dev`. Open https://localhost:5173 to view the site in your browser (it will load changes automatically).
 
-## Developing
+## Deploying your changes
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Submit change through the pull requests feature in GitHub.
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+To deploy a new version of this repository to GitHub Pages, run `npm run deploy`.
